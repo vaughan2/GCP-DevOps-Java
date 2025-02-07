@@ -61,8 +61,10 @@ Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
 
-
+### NOTES 
 
 quarkus extension add quarkus-jdbc-postgresql
 
 quarkus extension list --installed
+
+docker-compose up
