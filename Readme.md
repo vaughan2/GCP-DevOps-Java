@@ -16,3 +16,5 @@ Something about GCP workflow
 Actions -> terraform plan -> apply (Infra)
 Code Build -> Build quarkus -> Artifact registry (image)
 GCP code Deploy ?  
+
+![Architecture](.github/img/architecture.png)
