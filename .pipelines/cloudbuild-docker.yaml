@@ -2,8 +2,11 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: 
       - 'build'
+      - '-f'
+      - '/app/src/main/docker/Dockerfile.jvm'
       - '-t'
-      - './app/src/main/docker/Dockerfile.native'
+      - 'testing-quarkus-remote'
+      - '.'
 logsBucket: 'gs://cloud-build-logs12991'
 options:
   logging: GCS_ONLY

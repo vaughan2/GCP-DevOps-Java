@@ -68,3 +68,5 @@ quarkus extension add quarkus-jdbc-postgresql
 quarkus extension list --installed
 
 docker-compose up
+
+docker build -f src/main/docker/Dockerfile.jvm -t test-quarkus-local .   
