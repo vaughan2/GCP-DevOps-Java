@@ -11,14 +11,16 @@ steps:
     #   - './src/main/docker/Dockerfile.jvm'
     #   - '.'
     dir: 'app'  # Add this line to match the Maven build directory
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 
+           'us-central1-docker.pkg.dev/test-architect-449613/test-registry/terst-quarkus']
+
 logsBucket: 'gs://cloud-build-logs12991'
 options:
   logging: GCS_ONLY
 
   # Docker Push
-  # - name: 'gcr.io/cloud-builders/docker'
-  #   args: ['push', 
-  #          'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
+
 
   # Entrypoint, timeout and environment variables
   # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
