@@ -4,7 +4,7 @@ steps:
     args: ['package']
     dir: 'app'
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'terst-quarkus', '-f', './src/main/docker/Dockerfile.jvm', '.' ]
+    args: [ 'build', '-t', 'us-central1-docker.pkg.dev/test-architect-449613/test-registry/terst-quarkus', '-f', './src/main/docker/Dockerfile.jvm', '.' ]
     # args: 
     #   - 'build'
     #   - '-f'
