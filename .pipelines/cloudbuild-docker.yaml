@@ -1,10 +1,11 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: 
-      - 'build'
-      - '-f'
-      - './src/main/docker/Dockerfile.jvm'
-      - '.'
+    args: [ 'build', '-t', 'terst-quarkus', '-f', './app/src/docker/Dockerfile.jvm', '.' ]
+    # args: 
+    #   - 'build'
+    #   - '-f'
+    #   - './src/main/docker/Dockerfile.jvm'
+    #   - '.'
 logsBucket: 'gs://cloud-build-logs12991'
 options:
   logging: GCS_ONLY
