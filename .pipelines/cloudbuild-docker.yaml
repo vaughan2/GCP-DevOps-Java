@@ -4,9 +4,10 @@ steps:
     args: ['build', '-t', 
            'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage', 
            './app/src/main/docker/Dockerfile.native']
-options:
-  logging: CLOUD_LOGGING_ONLY
   logsBucket: 'gs://cloud-build-logs12991'
+  options:
+    logging: GCS_ONLY
+
 
   # Docker Push
   # - name: 'gcr.io/cloud-builders/docker'
