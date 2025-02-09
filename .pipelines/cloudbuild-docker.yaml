@@ -1,4 +1,14 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: '/bin/sh'
+    args:
+      - '-c'
+      - |
+        echo "Current working directory:"
+        pwd
+        echo "\nDirectory structure:"
+        ls -R
+
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'terst-quarkus', '-f', './app/src/docker/Dockerfile.jvm', '.' ]
     # args: 
