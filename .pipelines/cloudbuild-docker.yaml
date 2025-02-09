@@ -1,14 +1,7 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: '/bin/sh'
-    args:
-      - '-c'
-      - |
-        echo "Current working directory:"
-        pwd
-        echo "\nDirectory structure:"
-        ls -R
-
+  - name: 'maven:3.9.5-eclipse-temurin-17'
+    entrypoint: mvn
+    args: ['package']
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'terst-quarkus', '-f', './app/src/main/docker/Dockerfile.jvm', '.' ]
     # args: 
