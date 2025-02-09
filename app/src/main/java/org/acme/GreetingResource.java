@@ -5,12 +5,15 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/hello")
+import java.util.List;
+
+@Path("/")
 public class GreetingResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello from Quarkus REST";
+        List<Fruit> fruit =  new FruitResource().get();
+        return fruit.toString();
     }
 }
