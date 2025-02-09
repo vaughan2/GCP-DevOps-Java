@@ -4,8 +4,6 @@ steps:
       - 'build'
       - '-f'
       - '/app/src/main/docker/Dockerfile.jvm'
-      - '-t'
-      - 'testing-quarkus-remote'
       - '.'
 logsBucket: 'gs://cloud-build-logs12991'
 options:
