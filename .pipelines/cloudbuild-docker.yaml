@@ -1,9 +1,16 @@
 steps:
+  - name: 'bash'
+    script: |
+      #!/usr/bin/env bash
+      ls
+      pwd
+  - name: 'ubuntu'
+    script: ls
   - name: 'gcr.io/cloud-builders/docker'
     args: 
       - 'build'
       - '-t'
-      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage'
+      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/'
       - './app/src/main/docker/Dockerfile.native'
 logsBucket: 'gs://cloud-build-logs12991'
 options:
