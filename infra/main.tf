@@ -13,6 +13,7 @@ resource "google_artifact_registry_repository" "my-repo" {
   format        = "DOCKER"
 }
 
+# Storage Bucket
 resource "google_storage_bucket" "static-site" {
   name          = "cloud-build-logs12991"
   location      = "US"
