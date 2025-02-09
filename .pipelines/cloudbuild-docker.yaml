@@ -5,7 +5,8 @@ steps:
            'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage', 
            './app/src/main/docker/Dockerfile.native']
 options:
-  logging: NONE
+  logging: CLOUD_LOGGING_ONLY
+  logsBucket: 'gs://cloud-build-logs12991'
 
   # Docker Push
   # - name: 'gcr.io/cloud-builders/docker'

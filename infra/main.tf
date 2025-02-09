@@ -13,15 +13,23 @@ resource "google_artifact_registry_repository" "my-repo" {
   format        = "DOCKER"
 }
 
-resource "google_cloud_run_v2_service" "default" {
-  name     = "cloudrun-service-java-quarkus"
-  location = "us-central1"
-  deletion_protection = false
-  ingress = "INGRESS_TRAFFIC_ALL"
+resource "google_storage_bucket" "static-site" {
+  name          = "cloud-build-logs12991"
+  location      = "US"
 
-  template {
-    containers {
-      image = "us-docker.pkg.dev/cloudrun/container/hello"
-    }
-  }
+  uniform_bucket_level_access = true
+
 }
+
+# resource "google_cloud_run_v2_service" "default" {
+#   name     = "cloudrun-service-java-quarkus"
+#   location = "us-central1"
+#   deletion_protection = false
+#   ingress = "INGRESS_TRAFFIC_ALL"
+
+#   template {
+#     containers {
+#       image = "us-docker.pkg.dev/cloudrun/container/hello"
+#     }
+#   }
+# }
