@@ -10,7 +10,7 @@ steps:
         ls -R
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'terst-quarkus', '-f', './app/src/docker/Dockerfile.jvm', '.' ]
+    args: [ 'build', '-t', 'terst-quarkus', '-f', './app/src/main/docker/Dockerfile.jvm', '.' ]
     # args: 
     #   - 'build'
     #   - '-f'
