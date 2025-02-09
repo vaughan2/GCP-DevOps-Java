@@ -3,7 +3,7 @@ steps:
     args: 
       - 'build'
       - '-f'
-      - '/app/src/main/docker/Dockerfile.jvm'
+      - './src/main/docker/Dockerfile.jvm'
       - '.'
 logsBucket: 'gs://cloud-build-logs12991'
 options:
