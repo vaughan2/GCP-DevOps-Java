@@ -2,13 +2,15 @@ steps:
   - name: 'maven:3.9.5-eclipse-temurin-17'
     entrypoint: mvn
     args: ['package']
+    dir: 'app'
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'terst-quarkus', '-f', './app/src/main/docker/Dockerfile.jvm', '.' ]
+    args: [ 'build', '-t', 'terst-quarkus', '-f', './src/main/docker/Dockerfile.jvm', '.' ]
     # args: 
     #   - 'build'
     #   - '-f'
     #   - './src/main/docker/Dockerfile.jvm'
     #   - '.'
+    dir: 'app'  # Add this line to match the Maven build directory
 logsBucket: 'gs://cloud-build-logs12991'
 options:
   logging: GCS_ONLY
