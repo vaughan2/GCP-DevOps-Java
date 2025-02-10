@@ -13,7 +13,6 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        List<Fruit> fruit =  new FruitResource().get();
-        return fruit.toString();
+        return "fruit.toString();";
     }
 }
